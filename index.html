@@ -1,1 +1,581 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Saro Saravanan - Engineering leader with strong track record of applying technology and innovation to achieve optimal business outcomes.</title><link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css><script src=https://unpkg.com/formiojs@latest/dist/formio.min.js></script><link href=/static/css/app.b456f5e6f19f71b5d49d0f73fab354d9.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.2ae2e69a05c33dfc65f8.js></script><script type=text/javascript src=/static/js/vendor.42c4cb4d5a005276207f.js></script><script type=text/javascript src=/static/js/app.34d2bd7ead20d3933302.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saro Saravanan &mdash; CTO &middot; Builder &middot; AI-native Engineering Leader</title>
+  <meta name="description" content="Saro Saravanan — engineering leader open to CTO, Fractional CTO, and Advisor roles. Founder-CTO of $100M+ SaaS, chief architect for Fidelity NetBenefits and 22 other applications, head of engineering for TSA PreCheck, technology due diligence practitioner at Crosslake. Currently shipping AI products through Verby, LLC." />
+  <link rel="icon" type="image/x-icon" href="static/img/profile.jpg" />
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { font-family: 'Muli', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding-top: 54px; color: #212529; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Saira Extra Condensed', sans-serif; font-weight: 700; text-transform: uppercase; }
+    h1 { font-size: 6rem; line-height: 5.5rem; }
+    h2 { font-size: 3.5rem; }
+    h3 { font-size: 2rem; }
+    .subheading { text-transform: uppercase; font-weight: 500; font-family: 'Saira Extra Condensed', sans-serif; font-size: 1.35rem; }
+    .social-icons a { display: inline-flex; align-items: center; justify-content: center; height: 3.5rem; width: 3.5rem; background-color: #495057; color: #fff !important; border-radius: 100%; font-size: 1.5rem; margin-right: 1rem; text-decoration: none; transition: background-color 0.2s ease-in-out; }
+    .social-icons a:hover { background-color: #bd5d38; }
+    #sideNav { background-color: #bd5d38; }
+    #sideNav .navbar-brand { display: flex; align-items: center; padding-top: 0.5rem; padding-bottom: 0.5rem; margin-right: 0; }
+    #sideNav .navbar-brand .img-profile { max-width: 3rem; height: auto; border: 0.2rem solid rgba(255,255,255,0.2); }
+    #sideNav .navbar-collapse { overflow: auto; max-height: 75vh; }
+    #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link { font-family: 'Saira Extra Condensed', sans-serif; font-weight: 700; letter-spacing: 0.05rem; text-transform: uppercase; }
+    @media (min-width: 992px) {
+      body { padding-top: 0; padding-left: 17rem; }
+      #sideNav { text-align: center; position: fixed; top: 0; left: 0; display: flex; flex-direction: column; align-items: center; width: 17rem; height: 100vh; }
+      #sideNav .navbar-brand { display: flex; margin: auto auto 0; padding: 0.5rem; }
+      #sideNav .navbar-brand .img-profile { max-width: 10rem; max-height: 10rem; border: 0.5rem solid rgba(255,255,255,0.2); }
+      #sideNav .navbar-collapse { display: flex; align-items: flex-start; flex-grow: 0; width: 100%; margin-bottom: auto; }
+      #sideNav .navbar-collapse .navbar-nav { flex-direction: column; width: 100%; }
+      #sideNav .navbar-collapse .navbar-nav .nav-item { display: block; }
+      #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link { display: block; }
+    }
+    section.resume-section { border-bottom: 1px solid #dee2e6; padding-top: 3rem !important; padding-bottom: 3rem !important; max-width: 75rem; }
+    section.resume-section .resume-item .resume-date { min-width: 18rem; }
+    @media (min-width: 768px) { section.resume-section { min-height: 100vh; } }
+    @media (min-width: 992px) { section.resume-section { padding: 5rem !important; } }
+    .text-primary { color: #bd5d38 !important; }
+    a { color: #bd5d38; }
+    a:hover, a:focus, a:active { color: #824032; }
+    ul.fa-ul { margin-left: 2.1em; list-style-type: none; padding-left: 0; }
+    ul.fa-ul li { position: relative; padding-left: 0.25em; }
+    ul.fa-ul li .fa-li { position: absolute; left: -1.8em; top: 0.25em; text-align: center; width: 1.5em; }
+    .badge-pill-soft { background-color: #f1f1f1; color: #495057; padding: 0.45rem 0.85rem; border-radius: 999px; font-size: 0.9rem; margin: 0.25rem 0.25rem 0.25rem 0; display: inline-block; }
+    .role-card { border: 1px solid #dee2e6; border-radius: 0.5rem; padding: 1.25rem 1.5rem; background: #fafafa; }
+    .open-to { background-color: #fff7ec; border-left: 4px solid #bd5d38; padding: 1rem 1.25rem; border-radius: 0.25rem; }
+    .build-card { border: 1px solid #dee2e6; border-radius: 0.5rem; padding: 1.5rem; height: 100%; background: #fff; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .build-card:hover { transform: translateY(-2px); box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.08); }
+    .build-card .year-tag { display: inline-block; background: #bd5d38; color: #fff; font-family: 'Saira Extra Condensed', sans-serif; font-weight: 700; font-size: 0.85rem; padding: 0.15rem 0.6rem; border-radius: 999px; letter-spacing: 0.05rem; }
+    .build-card h4 { margin: 0.5rem 0 0.25rem; font-size: 1.5rem; }
+    .build-card .build-url { font-size: 0.9rem; color: #6c757d; font-family: 'Muli', monospace; }
+    .build-card .build-tech { font-size: 0.85rem; color: #6c757d; margin-top: 0.5rem; }
+  </style>
+</head>
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="static/img/profile.jpg" alt="Saro Saravanan" />
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#builds">Recent Builds</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#highlights">Highlights</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#patents">Patents &amp; Publications</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+      <div class="my-auto">
+        <h1>Saro <span class="text-primary">Saravanan</span></h1>
+        <div class="subheading mb-4">CTO &middot; Builder &middot; AI-native Engineering Leader</div>
+        <p class="lead mb-3"><strong>Four decades of building, scaling, and operating software</strong> &mdash; from a $100M-valuation founder-CTO exit to systems that millions of Americans use every day.</p>
+        <p>Founder-CTO of Emplanet, a J2EE 401(k) SaaS platform Forrester called "light years ahead of Fidelity and Vanguard" ($36M raised). Chief Architect at Fidelity Investments for NetBenefits (10M+ users), Plan Sponsor WebStation (30K+ employers), and 20+ other flagship products. Engineering leader and inventor behind TSA PreCheck and TSA CAT ($85M program win) at IDEMIA. Today, technical due diligence practitioner at the largest TDD firm worldwide (Crosslake Technologies) and founder of <a href="#builds">Verby, LLC</a> &mdash; an AI product studio shipping five products since 2024. Increasingly the diligence work is AI/ML &mdash; disruption-risk assessment for software targets, AI-readiness review across infrastructure, architecture, organization, and operations, and sell-side coaching that helps portfolio companies build genuine AI capability rather than AI veneer.</p>
+        <p>Holder of seven U.S. patents in identity, biometrics, and web application architecture. Co-author of two books on operating system internals. Certified Scrum Product Owner.</p>
+        <div class="open-to mb-4">
+          <strong>Currently open to:</strong> Full-time CTO &middot; Fractional CTO &middot; Board / Technical Advisor &middot; Technology Due Diligence
+        </div>
+        <div class="social-icons mb-3">
+          <a href="mailto:saro@cyberviso.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/saro-saravanan-a0978/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/saro-saravanan" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="static/my-portfolio.pdf" target="_blank" rel="noopener" aria-label="Download resume"><i class="fa-solid fa-file-arrow-down"></i></a>
+        </div>
+        <div class="text-muted small">Westborough, MA &middot; saro@cyberviso.com &middot; saro.saravanan@gmail.com &middot; (508) 341-2042</div>
+      </div>
+    </section>
+
+    <hr class="m-0" />
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="builds">
+      <div class="my-auto">
+        <h2 class="mb-2">Recent 0&ndash;1 Builds</h2>
+        <p class="text-muted mb-5">Five AI products shipped through <strong>Verby, LLC</strong> since 2024 &mdash; vibe-coded, agent-assisted, founder-led from spec to first paying customer.</p>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4"><div class="build-card">
+            <span class="year-tag">2026</span>
+            <h4><a href="https://meera.tours" target="_blank" rel="noopener">Meera.tours</a></h4>
+            <div class="build-url">meera.tours</div>
+            <p class="mt-2 mb-0">Newest Verby, LLC product. Launching 2026.</p>
+          </div></div>
+
+          <div class="col-md-6 col-lg-4"><div class="build-card">
+            <span class="year-tag">2026</span>
+            <h4><a href="https://routeoutlook.com" target="_blank" rel="noopener">Route Outlook</a></h4>
+            <div class="build-url">routeoutlook.com</div>
+            <p class="mt-2 mb-1">Weather-aware road trip planning. Shows weather, live traffic cameras, accidents, and construction along your entire route &mdash; timed to when you'll actually be there. 511 data from 12+ states; 25,000+ traffic cameras.</p>
+            <div class="build-tech">Route intelligence &middot; weather modeling &middot; real-time DOT integrations</div>
+          </div></div>
+
+          <div class="col-md-6 col-lg-4"><div class="build-card">
+            <span class="year-tag">2025</span>
+            <h4><a href="https://joonoo.art" target="_blank" rel="noopener">Joonoo.art</a></h4>
+            <div class="build-url">joonoo.art</div>
+            <p class="mt-2 mb-1">Personalized AI children's storybooks where the child is the main character. 50+ languages, 15 illustration styles, instant digital delivery or printed keepsake. Paying customers worldwide. An experiment in vibe-coding and agentic business operations.</p>
+            <div class="build-tech">Next.js &middot; Claude agents for marketing &amp; operations &middot; generative content &middot; e-commerce</div>
+          </div></div>
+
+          <div class="col-md-6 col-lg-4"><div class="build-card">
+            <span class="year-tag">2024</span>
+            <h4><a href="https://zipmvp.com" target="_blank" rel="noopener">ZipMVP</a></h4>
+            <div class="build-url">zipmvp.com</div>
+            <p class="mt-2 mb-1">AI-powered tool that builds and launches SaaS MVPs in hours directly from a product specification. 95% automation. Subscription model includes fractional CTO/CPO/CISO services. Partner in the Middle East.</p>
+            <div class="build-tech">AI-driven code generation &middot; full-stack scaffolding &middot; secure-by-default architecture</div>
+          </div></div>
+
+          <div class="col-md-6 col-lg-4"><div class="build-card">
+            <span class="year-tag">2024</span>
+            <h4><a href="https://getverby.com" target="_blank" rel="noopener">Verby</a></h4>
+            <div class="build-url">getverby.com</div>
+            <p class="mt-2 mb-1">A pocket AI coach for life skills development &mdash; communication, relationships, leadership. Personalized tracks for solopreneurs, managers, executives, students, and families. Currently in the product-market-fit stage.</p>
+            <div class="build-tech">Conversational AI &middot; personalized coaching tracks &middot; mobile-first design</div>
+          </div></div>
+
+          <div class="col-md-6 col-lg-4"><div class="build-card" style="background:#fafafa">
+            <span class="year-tag" style="background:#6c757d">Fractional</span>
+            <h4>Selected fractional / advisor AI work</h4>
+            <p class="mt-2 mb-2"><strong>Catalyx</strong> &mdash; FDA chatbot and unmet-medical-need research agents for pharmaceutical clients (F500 RAG).</p>
+            <p class="mb-2"><strong>TFG (Agile Fractal Grid)</strong> &mdash; agentic SharePoint research bot for grants and advocacy background.</p>
+            <p class="mb-0"><strong>Oho Ventures</strong> &mdash; Google BERT-based NLP that improved insurance customer-support response times by 50%+.</p>
+          </div></div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0" />
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+      <div class="my-auto">
+        <h2 class="mb-5">Experience</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Founder</h3>
+            <div class="subheading mb-3">Verby, LLC &mdash; AI Product Studio</div>
+            <ul>
+              <li>Founded and lead an AI product studio shipping consumer and B2B products. Five products live across 2024&ndash;2026: <a href="https://getverby.com" target="_blank" rel="noopener">Verby</a>, <a href="https://zipmvp.com" target="_blank" rel="noopener">ZipMVP</a>, <a href="https://joonoo.art" target="_blank" rel="noopener">Joonoo.art</a>, <a href="https://routeoutlook.com" target="_blank" rel="noopener">Route Outlook</a>, and <a href="https://meera.tours" target="_blank" rel="noopener">Meera.tours</a>.</li>
+              <li>Solo and small-team builds combining LLMs, agents, and traditional full-stack engineering &mdash; from idea to first paying customers.</li>
+              <li>Verby, LLC products run on Next.js, modern serverless stacks, and Claude-based agents for marketing, operations, and content.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">2024 &mdash; Present</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Technology Due Diligence Practitioner</h3>
+            <div class="subheading mb-3">Crosslake Technologies</div>
+            <ul>
+              <li>Practitioner with the largest technical due diligence firm worldwide; lead and contribute to engagements on behalf of private equity and venture capital firms evaluating software acquisitions and growth investments.</li>
+              <li>Assess engineering organizations, architecture, scalability, security posture, technical debt, AI/ML readiness, and team capability across companies in fintech, identity, SaaS, and enterprise verticals.</li>
+              <li>Author actionable diligence reports and 100-day plans that inform multi-million-dollar investment decisions and post-close value-creation roadmaps.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">January 2022 &mdash; Present</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Principal &middot; Cyberviso LLC &amp; Saro Saravanan &amp; Associates</h3>
+            <div class="subheading mb-3">Fractional CTO, Strategic Advisor, Hands-on Consultant</div>
+            <ul>
+              <li>Fractional / Interim CTO and strategic advisor to early- and growth-stage companies needing executive technology leadership without a full-time hire. Aligning tech strategy with business goals, leading digital transformations, building teams, and overseeing product development.</li>
+              <li><strong>Intuitus Cyber</strong> &mdash; Head of Strategy for a SOC-as-a-Service startup commercializing defense-grade cybersecurity from The Boeing Company. Created vision and mission, investor pitch deck, product sales deck, sales training, blog and PR content, competitive analysis, channel strategy.</li>
+              <li><strong>Agile Fractal Grid (TFG)</strong> &mdash; Cross-consortium product owner across Energy, Telecom, Computing, and Economic Development. Selected the U.S. Air Force DevSecOps reference architecture (Kubernetes, Istio, OWASP, Terraform, Ansible, ELK, Prometheus) for continuous Authority-to-Operate. Acted as cybersecurity and cyber-physical-systems security lead.</li>
+              <li><strong>FaceLabs.AI</strong> &mdash; Strategic advisor on investor deck, product development, and marketing for a facial-recognition access-control and visitor-management startup.</li>
+              <li><strong>Oho Ventures</strong> &mdash; Selected Google BERT for NLP-driven customer-support email triage at a major insurance firm; improved response times by 50%+.</li>
+              <li><strong>Instant Systems, Inc.</strong> &mdash; Venture Advisor (Aug 2024 &mdash; Present).</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">September 2018 &mdash; Present</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Fractional CTO</h3>
+            <div class="subheading mb-3">NuBinary, Inc.</div>
+            <ul>
+              <li>Provided strategic and technical leadership to startups and growing businesses on a fractional / interim basis &mdash; aligning technology strategy with business goals, leading digital transformations, managing technical teams, and overseeing product development across multiple client engagements.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">October 2021 &mdash; May 2025</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Chief Science &amp; Technology Officer</h3>
+            <div class="subheading mb-3">Independent Grid Solutions</div>
+            <ul>
+              <li>Supported business development to bring <strong>Enercap</strong>, a supercapacitor battery solution, to large electrical-grid operators in the United States.</li>
+              <li>Engaged with utility operators, grid integrators, and technical decision-makers to translate the supercapacitor technology into deployable energy-storage offerings; advised on technical positioning, customer engagement, and partnership strategy.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">January 2023 &mdash; December 2023</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">CTO, Special Projects</h3>
+            <div class="subheading mb-3">The Sun Company Americas, Inc.</div>
+            <ul>
+              <li>R&amp;D and new-product introduction in integrated business systems for residential and commercial solar projects.</li>
+              <li>Research and product development for energy-storage systems, supporting the mission to democratize and accelerate green electrification.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">January 2022 &mdash; December 2022</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Vice President, Technology &amp; Innovation</h3>
+            <div class="subheading mb-3">IDEMIA (formerly MorphoTrust USA)</div>
+            <ul>
+              <li><strong>TSA PreCheck.</strong> Engineering leader of the award-winning agile team that delivered TSA PreCheck, the nation's pre-eminent registered traveler program. Led teams up to 80 engineers and a $20M budget.</li>
+              <li><strong>Transformation.</strong> Product owner and transformation leader who re-engineered the core biometric credential issuance system, introducing agile, CI/CD, 12-factor, DevOps, PaaS, IaC, and a modern tech stack &mdash; dramatically lowering delivery cost.</li>
+              <li><strong>$200M LOB.</strong> Program director for a $200M line of business. Led corporate, product, and technology strategy. Practiced business model and value proposition canvases. Negotiated cost-saving vendor contracts. Catalyzed customer success for facial-recognition wins with DHS, CBP, airlines, and sea ports.</li>
+              <li><strong>$85M TSA CAT win.</strong> Product architect and capture lead for TSA CAT, an identity-verification program covering 450 U.S. airports, openly competed for six years without a winner. Conceptualized and prototyped a patent-pending solution within six months. Winner of award for most innovative sales process.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">April 2013 &mdash; September 2018</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Engineering Consultant</h3>
+            <div class="subheading mb-3">MorphoTrust USA (L1 Identity Solutions, Secure Credentialing Division)</div>
+            <ul>
+              <li>Delivered drivers' license systems for several large U.S. states and the National ID and Passport system for Paraguay. Worked directly with state and national commissioners, government ministries, CIOs, CISOs, architects, developers, and SREs in a comprehensive solution-architecture, engineering, integration, deployment, and program-management role.</li>
+              <li>Turned around a $45M critical failing program and delivered ahead of customer expectations.</li>
+              <li>On-time delivery at 40% cost savings on programs &gt;$10M.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">June 2008 &mdash; April 2013</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Managing Director</h3>
+            <div class="subheading mb-3">Everbeam, Inc.</div>
+            <ul>
+              <li>General manager of a product-development consultancy providing on-shore, off-shore, project-based, and strategic services in product management, business and technology development, and GTM.</li>
+              <li>Interim CTO at tapdancelive.com (online skills testing); Director of Product Strategy at AssureTec; Lead Architect at Ipswitch.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">December 2005 &mdash; June 2008</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Founder &amp; CTO</h3>
+            <div class="subheading mb-3">Mediabee</div>
+            <ul>
+              <li>Created a patent-pending cross-platform rich Internet/desktop application used by thousands of users worldwide.</li>
+              <li>Bootstrapped the company; oversaw investor presentations, marketing, product development, and technology architecture. Managed an offshore development team.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">September 2002 &mdash; June 2006</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Founder &amp; CTO</h3>
+            <div class="subheading mb-3">Emplanet</div>
+            <ul>
+              <li>Launched a J2EE Internet-based white-label self-service 401(k) SaaS platform for fund companies that Forrester called <em>"light years ahead of Fidelity and Vanguard."</em></li>
+              <li><strong>Raised $36M.</strong> Secured MetLife and PNC Bank as both investors and customers.</li>
+              <li>Built Participant, Sponsor, Advisor, Admin, and Partner Stations along with a state-of-the-art data center, common-component web service delivery infrastructure (web, speech-IVR, wireless, SSO, partner), and a highly automated back-office trading and reconciliation system.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">January 2000 &mdash; July 2002</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Consulting Chief Architect</h3>
+            <div class="subheading mb-3">Fidelity Investments</div>
+            <ul>
+              <li>Hands-on Chief Architect for <strong>22+ flagship SaaS products</strong>, including <a href="https://netbenefits.fidelity.com" target="_blank" rel="noopener">Fidelity NetBenefits</a> (10M+ users) and <a href="https://psw.fidelity.com" target="_blank" rel="noopener">Plan Sponsor WebStation</a> (30K+ employers).</li>
+              <li>Designed and implemented <strong>Catalina</strong>, the highly available, highly scalable, secure web-application architecture and integration platform that became the standard for Fidelity's online services. Secured multiple patents in web application servers and tools.</li>
+              <li>Delivered SLAMNet, NCCMTnet, Health &amp; Other Benefits, Quicken Financial Planner, Portfolio Planner, Pension Modeler, Digital Library, Pension Planner, PSW Reporting, PSW Internet Workbench, PSW Treasury, PSW Interchange, and more.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">October 1995 &mdash; February 2000</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">Principal Engineer</h3>
+            <div class="subheading mb-3">Digital Equipment Corporation</div>
+            <ul>
+              <li>Co-authored the authoritative reference <em>OpenVMS AXP Internals and Data Structures</em>.</li>
+              <li>Developed the standalone backup environment for VMS. Ported VMS to Alpha, NetWare, and Windows NT.</li>
+              <li>Taught crash-dump analysis to field engineers worldwide to rave reviews.</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">September 1986 &mdash; September 1995</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0" />
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="highlights">
+      <div class="my-auto">
+        <h2 class="mb-5">Career Highlights</h2>
+        <div class="row g-4">
+          <div class="col-md-6"><div class="role-card h-100">
+            <div class="subheading">Founder-CTO &middot; $36M raised</div>
+            <p class="mb-0">Built Emplanet, a J2EE 401(k) SaaS Forrester called "light years ahead of Fidelity and Vanguard." Closed MetLife and PNC Bank as both investors and customers; reached a $100M valuation.</p>
+          </div></div>
+          <div class="col-md-6"><div class="role-card h-100">
+            <div class="subheading">22+ Fidelity products &middot; 10M+ users</div>
+            <p class="mb-0">Chief Architect for NetBenefits, Plan Sponsor WebStation, and 20+ other flagship SaaS products. Designed Catalina, the platform that became the standard for Fidelity's online services.</p>
+          </div></div>
+          <div class="col-md-6"><div class="role-card h-100">
+            <div class="subheading">$85M TSA CAT win</div>
+            <p class="mb-0">Cracked a six-year unwinnable competition at IDEMIA by prototyping a patent-pending identity-verification solution in six months. Led capture and customer success.</p>
+          </div></div>
+          <div class="col-md-6"><div class="role-card h-100">
+            <div class="subheading">TSA PreCheck</div>
+            <p class="mb-0">Engineering leader of the award-winning team behind the nation's largest registered-traveler program. Led teams up to 80 engineers and a $20M budget.</p>
+          </div></div>
+          <div class="col-md-6"><div class="role-card h-100">
+            <div class="subheading">5 AI products shipped (2024&ndash;2026)</div>
+            <p class="mb-0">Built and launched Verby, ZipMVP, Joonoo.art, Route Outlook, and Meera.tours through Verby, LLC &mdash; solo and small-team builds combining LLMs, agents, and full-stack engineering.</p>
+          </div></div>
+          <div class="col-md-6"><div class="role-card h-100">
+            <div class="subheading">Investor-side diligence at scale</div>
+            <p class="mb-0">Practitioner at Crosslake Technologies &mdash; the largest TDD firm worldwide &mdash; since 2022. Inside the engineering orgs of dozens of software companies on behalf of PE and VC investors.</p>
+          </div></div>
+          <div class="col-md-6"><div class="role-card h-100">
+            <div class="subheading">7 U.S. patents</div>
+            <p class="mb-0">Inventor on patents spanning identity verification, biometrics, document authentication, single sign-on, automated health checks, and web application architecture.</p>
+          </div></div>
+          <div class="col-md-6"><div class="role-card h-100">
+            <div class="subheading">Books, white papers, awards</div>
+            <p class="mb-0">Co-author of two Digital Press books on operating system internals. Author of influential industry white papers on secure SDLC, smart-grid deployment, and digital business marketplaces. Multiple innovation awards.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0" />
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+      <div class="my-auto">
+        <h2 class="mb-5">Skills</h2>
+
+        <div class="subheading mb-3">Leadership &amp; Strategy</div>
+        <div class="mb-4">
+          <span class="badge-pill-soft">Founder-CTO</span>
+          <span class="badge-pill-soft">Fractional / Interim CTO</span>
+          <span class="badge-pill-soft">Technology due diligence (PE/VC)</span>
+          <span class="badge-pill-soft">M&amp;A &amp; post-close integration</span>
+          <span class="badge-pill-soft">Engineering org design (5&ndash;200 engineers)</span>
+          <span class="badge-pill-soft">Hiring &amp; team building</span>
+          <span class="badge-pill-soft">Lean-Agile &middot; Scrum &middot; Kanban</span>
+          <span class="badge-pill-soft">Fundraising &amp; investor relations</span>
+          <span class="badge-pill-soft">Product strategy &middot; portfolio management</span>
+          <span class="badge-pill-soft">Vendor &amp; contract negotiation</span>
+          <span class="badge-pill-soft">Budget ownership ($1M &ndash; $200M)</span>
+          <span class="badge-pill-soft">Government &amp; F500 contracting</span>
+        </div>
+
+        <div class="subheading mb-3">AI / ML &amp; GenAI</div>
+        <div class="mb-4">
+          <span class="badge-pill-soft">LLM applications</span>
+          <span class="badge-pill-soft">Agentic AI (Claude agents)</span>
+          <span class="badge-pill-soft">RAG &amp; vector search</span>
+          <span class="badge-pill-soft">Prompt engineering &amp; eval</span>
+          <span class="badge-pill-soft">Foundation model selection</span>
+          <span class="badge-pill-soft">AI safety &amp; governance</span>
+          <span class="badge-pill-soft">Generative content pipelines</span>
+          <span class="badge-pill-soft">NLP (BERT &amp; modern transformers)</span>
+          <span class="badge-pill-soft">Biometrics &amp; identity ML</span>
+        </div>
+
+        <div class="subheading mb-3">Architecture &amp; Platform</div>
+        <div class="mb-4">
+          <span class="badge-pill-soft">Cloud-native (AWS &middot; GCP &middot; Azure)</span>
+          <span class="badge-pill-soft">Kubernetes &middot; Istio</span>
+          <span class="badge-pill-soft">Docker &middot; Swarm</span>
+          <span class="badge-pill-soft">Terraform &middot; Ansible</span>
+          <span class="badge-pill-soft">Microservices &middot; event-driven</span>
+          <span class="badge-pill-soft">Domain-driven design</span>
+          <span class="badge-pill-soft">High availability &amp; DR</span>
+          <span class="badge-pill-soft">Observability (ELK, Grafana, Prometheus)</span>
+          <span class="badge-pill-soft">CI/CD &middot; DevSecOps</span>
+        </div>
+
+        <div class="subheading mb-3">Security &amp; Compliance</div>
+        <div class="mb-4">
+          <span class="badge-pill-soft">SOC 2</span>
+          <span class="badge-pill-soft">PCI</span>
+          <span class="badge-pill-soft">FedRAMP</span>
+          <span class="badge-pill-soft">TSA ATO &middot; Continuous ATO</span>
+          <span class="badge-pill-soft">HIPAA</span>
+          <span class="badge-pill-soft">OWASP</span>
+          <span class="badge-pill-soft">OAuth &middot; OIDC &middot; JWT</span>
+          <span class="badge-pill-soft">12-factor</span>
+          <span class="badge-pill-soft">Biometrics &amp; identity verification</span>
+          <span class="badge-pill-soft">Secrets management</span>
+          <span class="badge-pill-soft">SCADA &amp; ICS security</span>
+        </div>
+
+        <div class="subheading mb-3">Languages, Frameworks &amp; Data</div>
+        <div class="mb-4">
+          <span class="badge-pill-soft">Java &middot; Spring Boot</span>
+          <span class="badge-pill-soft">Python</span>
+          <span class="badge-pill-soft">Node.js &middot; TypeScript</span>
+          <span class="badge-pill-soft">C# &middot; .NET</span>
+          <span class="badge-pill-soft">React &middot; Next.js &middot; Vue</span>
+          <span class="badge-pill-soft">PostgreSQL &middot; MySQL &middot; MS SQL &middot; Oracle</span>
+          <span class="badge-pill-soft">MongoDB &middot; Redis</span>
+          <span class="badge-pill-soft">Vector databases</span>
+          <span class="badge-pill-soft">ETL &amp; migration</span>
+        </div>
+
+        <div class="subheading mb-3">Domains</div>
+        <div class="mb-4">
+          <span class="badge-pill-soft">Fintech &amp; financial services</span>
+          <span class="badge-pill-soft">Identity &amp; biometrics</span>
+          <span class="badge-pill-soft">Border security &amp; GovTech</span>
+          <span class="badge-pill-soft">Energy &middot; smart grid &middot; energy storage</span>
+          <span class="badge-pill-soft">Cybersecurity</span>
+          <span class="badge-pill-soft">Pharmaceutical &amp; health</span>
+          <span class="badge-pill-soft">Consumer AI</span>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0" />
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="patents">
+      <div class="my-auto">
+        <h2 class="mb-5">Patents &amp; Publications</h2>
+
+        <div class="subheading mb-3">U.S. Patents</div>
+        <ul class="fa-ul mb-4">
+          <li><span class="fa-li"><i class="fa-solid fa-certificate text-primary"></i></span><a href="https://patents.google.com/patent/US9501882B2/en" target="_blank" rel="noopener">US9501882</a> &mdash; Streamline identity verification at airports and beyond (facial recognition without physical credentials).</li>
+          <li><span class="fa-li"><i class="fa-solid fa-certificate text-primary"></i></span><a href="https://patents.google.com/patent/US9481197B2/en" target="_blank" rel="noopener">US9481197</a> &amp; <a href="https://patents.google.com/patent/US10037460B2/en" target="_blank" rel="noopener">US10037460</a> &mdash; Credential authentication: improved document authentication speed and accuracy.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-certificate text-primary"></i></span><a href="https://patents.google.com/patent/US6631424B1/en" target="_blank" rel="noopener">US6631424</a> &mdash; Distributing information using a computer (application routing via URLs).</li>
+          <li><span class="fa-li"><i class="fa-solid fa-certificate text-primary"></i></span><a href="https://patents.google.com/patent/US6151686A/en" target="_blank" rel="noopener">US6151686</a> &mdash; Automated health checking of web applications.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-certificate text-primary"></i></span><a href="https://patents.google.com/patent/US5991878A/en" target="_blank" rel="noopener">US5991878</a> &mdash; Single sign-on for web applications.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-certificate text-primary"></i></span><a href="https://patents.google.com/patent/US20170118209A1/en" target="_blank" rel="noopener">US20170118209</a> &mdash; Verifying liveness of an identification presenter.</li>
+        </ul>
+
+        <div class="subheading mb-3">Books</div>
+        <ul class="fa-ul mb-4">
+          <li><span class="fa-li"><i class="fa-solid fa-book text-primary"></i></span><em>OpenVMS AXP Internals and Data Structures, Version 1.5</em> &mdash; Digital Press, 1994. Co-author.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-book text-primary"></i></span><em>VAX/VMS Internals and Data Structures, Version 5.2</em> &mdash; Digital Press, 1991. Contributor.</li>
+        </ul>
+
+        <div class="subheading mb-3">White Papers</div>
+        <ul class="fa-ul mb-2">
+          <li><span class="fa-li"><i class="fa-solid fa-file-lines text-primary"></i></span><em>Digital Business Marketplace</em> &mdash; Forum Catalyst.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-file-lines text-primary"></i></span><em>Provably Secure SDLC Processes Enable Frictionless Deployment of Smart Grids.</em></li>
+          <li><span class="fa-li"><i class="fa-solid fa-file-lines text-primary"></i></span><em>How to Assume an Assertively Proactive Security Posture for Your Organization.</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="m-0" />
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+      <div class="my-auto">
+        <h2 class="mb-5">Awards &amp; Certifications</h2>
+        <ul class="fa-ul mb-4">
+          <li><span class="fa-li"><i class="fa-solid fa-trophy text-primary"></i></span>Microsoft Award for Technical Innovation &mdash; Fidelity NetBenefits.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-trophy text-primary"></i></span>Winner, Most Innovative Sales Process &mdash; for TSA CAT capture at IDEMIA.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-trophy text-primary"></i></span>Winner, Most Innovative Product &mdash; Government Security News Magazine.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-trophy text-primary"></i></span>Finalist, Best Security Checkpoint Solution.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-trophy text-primary"></i></span>Outstanding Service Award.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-certificate text-primary"></i></span>Certified Scrum Product Owner.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-certificate text-primary"></i></span>HIPAA Security &middot; HIPAA Associate (HIPAAA).</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="m-0" />
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+      <div class="my-auto">
+        <h2 class="mb-5">Education</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">State University of New York at Buffalo</h3>
+            <div class="subheading mb-3">Master of Science</div>
+            <div>Mechanical Engineering &middot; Computer Systems</div>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">1983 &mdash; 1985</span></div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">National Institute of Technology, Tiruchirappalli</h3>
+            <div class="subheading mb-3">Bachelor of Engineering (Honors)</div>
+            <div>Mechanical Engineering</div>
+          </div>
+          <div class="resume-date text-md-end"><span class="text-primary">1978 &mdash; 1983</span></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0" />
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+      <div class="my-auto">
+        <h2 class="mb-5">Interests</h2>
+        <p>Outside of work, I enjoy hiking, tennis, cooking, mindfulness practice, and a variety of music &mdash; especially jazz. I'm a lifelong learner who reads widely across technology, business strategy, and behavioral science.</p>
+        <p class="mb-0"><strong>Let's talk.</strong> If you're hiring a CTO, exploring a fractional engagement, looking for a technical advisor, or evaluating a software target for investment, reach out at <a href="mailto:saro@cyberviso.com">saro@cyberviso.com</a> or on <a href="https://www.linkedin.com/in/saro-saravanan-a0978/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('a.js-scroll-trigger').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = a.getAttribute('href');
+        if (href && href.length > 1 && href.charAt(0) === '#') {
+          var t = document.querySelector(href);
+          if (t) {
+            e.preventDefault();
+            t.scrollIntoView({ behavior: 'smooth' });
+            var nav = document.getElementById('navbarSupportedContent');
+            if (nav && nav.classList.contains('show')) {
+              new bootstrap.Collapse(nav).hide();
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
