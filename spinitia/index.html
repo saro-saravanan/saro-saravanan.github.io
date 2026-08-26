@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spinitia — the back office for member-owned companies</title>
+<meta name="description" content="Member records, capital accounts, and patronage — handled. A research project and early tool for co-ops and community-owned companies.">
+<style>
+  :root{--ink:#1c1b18;--muted:#5f5b52;--paper:#faf8f3;--card:#ffffff;--line:#e6e1d6;--accent:#1f6f5f;--accent-ink:#ffffff;--soft:#e8f1ee}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;background:var(--paper);color:var(--ink);line-height:1.55}
+  .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  header{padding:32px 0 8px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .mark{width:36px;height:36px;border-radius:50%;background:var(--accent);display:inline-block;position:relative}
+  .brand .mark::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--paper)}
+  .brand strong{font-size:1.15rem;letter-spacing:.02em}
+  .eyebrow{color:var(--accent);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin:48px 0 10px}
+  h1{font-size:clamp(1.9rem,4.5vw,2.8rem);line-height:1.15;margin:0 0 18px;font-weight:600}
+  .lede{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 0 28px}
+  .cta{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:600}
+  .cta.secondary{background:transparent;color:var(--accent);border:1.5px solid var(--accent);margin-left:10px}
+  section{padding:36px 0;border-top:1px solid var(--line)}
+  h2{font-size:1.35rem;margin:0 0 14px;font-weight:600}
+  p{margin:0 0 14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .card h3{margin:0 0 8px;font-size:1.02rem}
+  .card p{color:var(--muted);font-size:.95rem;margin:0}
+  .note{background:var(--soft);border-radius:10px;padding:16px 18px;color:var(--ink);font-size:.98rem}
+  form{display:grid;gap:12px;max-width:520px;margin-top:8px}
+  label{font-size:.9rem;color:var(--muted)}
+  input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;font-size:1rem;background:#fff;font-family:inherit}
+  button{background:var(--accent);color:#fff;border:0;padding:13px 18px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer}
+  footer{padding:30px 0 50px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+  a{color:var(--accent)}
+  @media (max-width:560px){.cta.secondary{margin-left:0;margin-top:10px}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="brand"><span class="mark"></span><strong>Spinitia</strong></div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow sans">A research project for member-owned companies</p>
+  <h1>The year-end paperwork of shared ownership shouldn't take a month.</h1>
+  <p class="lede">Member registers, capital accounts, patronage refunds, the 1099s, the vote. Co-ops and community-owned companies run this on spreadsheets and goodwill. I'm talking to the people who actually do it — before building anything.</p>
+  <p>
+    <a class="cta sans" href="https://calendar.app.google/j15VTcYcLio4eMJV9">Book a 20-minute call</a>
+    <a class="cta secondary sans" href="#waitlist">Join the early list</a>
+  </p>
+
+  <section id="who">
+    <h2>Who's asking</h2>
+    <p>I'm Saro Saravanan, an independent technology consultant. I founded a 401(k) recordkeeping company and was chief architect on Fidelity's NetBenefits, so I've spent years on the systems that track what individual people are owed by an institution. I'm now looking at the companies that have <em>members</em> — worker co-ops, food and consumer co-ops, housing co-ops, and startups that want their customers and workers to own a piece of the business.</p>
+    <p class="sans" style="font-size:.92rem;color:var(--muted)">More about me: <a href="https://saro-saravanan.github.io">saro-saravanan.github.io</a> · <a href="https://www.linkedin.com/in/saro-saravanan-a0978/">LinkedIn</a></p>
+    <p>This isn't a sales call. I'm doing twenty conversations to learn what's painful and what's fine as-is, and I'll share what I learn with everyone who takes part.</p>
+  </section>
+
+  <section id="what">
+    <h2>What I'm trying to understand</h2>
+    <div class="grid">
+      <div class="card"><h3>Year-end</h3><p>What happens between "we had a surplus" and a patronage check or notice landing in a member's mailbox — and how many hours and outside fees it takes.</p></div>
+      <div class="card"><h3>The member register</h3><p>Where it lives, who touches it, and what breaks when someone joins, leaves, moves, or dies.</p></div>
+      <div class="card"><h3>Raising member capital</h3><p>When you last sold member shares, preferred shares, or took member loans — what was hardest, and what the paperwork cost.</p></div>
+      <div class="card"><h3>Governance</h3><p>How votes, notices, and annual meetings actually get run, and whether the records would survive an audit.</p></div>
+    </div>
+  </section>
+
+  <section id="idea">
+    <h2>What I might build, if it's needed</h2>
+    <p>A small, affordable service and tool that keeps the member register, calculates and documents patronage, produces the tax forms and member statements, and keeps governance records clean — priced for a 50-member worker co-op, not a 50,000-member agricultural one. Later, help packaging member-capital raises so they're cheap and legible.</p>
+    <p class="note"><strong>Two things I won't do:</strong> give tax or legal advice (I'll point you to people who can), or build something nobody asked for. If these conversations say the problem is already solved, I'll say so.</p>
+  </section>
+
+  <section id="waitlist">
+    <h2>Early list</h2>
+    <p>If you'd rather not book a call but want to hear what comes of this — or want first access if a tool ships — leave your details.</p>
+    <form class="sans" id="waitlist-form" action="https://script.google.com/macros/s/AKfycbya0UzpK4-tWSrM3eS8Auk1PCvev99h_3PnUzt9TXpto9GOdc4Ik_fha5s4H144MPWc/exec" method="POST">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <input type="hidden" name="source" value="landing">
+      <div><label for="name">Name</label><input id="name" name="name" required></div>
+      <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div><label for="org">Organization</label><input id="org" name="org" placeholder="Co-op, PBC, or startup name"></div>
+      <div><label for="type">You are a…</label>
+        <select id="type" name="type">
+          <option>Worker co-op</option><option>Food / consumer co-op</option><option>Housing co-op</option><option>Multi-stakeholder co-op</option><option>PBC / benefit corp</option><option>Startup founder exploring community ownership</option><option>Advisor / lawyer / accountant</option><option>Other</option>
+        </select></div>
+      <div><label for="pain">What's the most annoying part of member records or patronage today? (optional)</label><textarea id="pain" name="pain" rows="3"></textarea></div>
+      <button type="submit">Add me</button>
+      <p id="waitlist-msg" class="note" style="display:none"></p>
+    </form>
+  </section>
+</main>
+
+<script>
+(function(){
+  var f=document.getElementById('waitlist-form'),m=document.getElementById('waitlist-msg');
+  if(!f||f.action.indexOf('https://script.google.com/macros/s/AKfycbya0UzpK4-tWSrM3eS8Auk1PCvev99h_3PnUzt9TXpto9GOdc4Ik_fha5s4H144MPWc/exec')>-1)return;
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var b=f.querySelector('button');b.disabled=true;b.textContent='Adding…';
+    var data=new FormData(f);data.append('ua',navigator.userAgent);
+    fetch(f.action,{method:'POST',body:data,mode:'no-cors'})
+      .then(function(){f.reset();m.style.display='block';m.textContent="Thanks — you're on the list. I'll only email when there's something worth reading.";b.textContent='Added';})
+      .catch(function(){m.style.display='block';m.textContent='That didn\'t go through. Email me instead: saro.saravanan@gmail.com';b.disabled=false;b.textContent='Add me';});
+  });
+})();
+</script>
+
+<footer class="wrap sans">
+  <p>Saro Saravanan · <a href="mailto:saro.saravanan@gmail.com">saro.saravanan@gmail.com</a></p>
+  <p>Spinitia is a working name. Nothing here is an offer of securities, or tax or legal advice.</p>
+</footer>
+</body>
+</html>
