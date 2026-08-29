@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patronage Allocation Calculator ? Spinitia</title>
+<style>
+  :root { --ink:#1f2a24; --muted:#5f6b66; --line:#d9dfdc; --bg:#f7f8f7; --card:#fff; --accent:#2f6b4f; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg); }
+  main { max-width:900px; margin:0 auto; padding:2rem 1rem 4rem; }
+  h1 { font-size:1.6rem; margin:0 0 .25rem; }
+  .sub { color:var(--muted); margin:0 0 1.5rem; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:1.25rem; margin-bottom:1.25rem; }
+  label { display:block; font-weight:600; margin:.75rem 0 .25rem; font-size:.95rem; }
+  .hint { color:var(--muted); font-size:.85rem; font-weight:400; }
+  input[type=number], select, textarea { width:100%; padding:.5rem .6rem; border:1px solid var(--line); border-radius:6px; font:inherit; }
+  textarea { min-height:140px; font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.9rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:0 1rem; }
+  button { background:var(--accent); color:#fff; border:0; border-radius:6px; padding:.65rem 1.1rem; font:inherit; font-weight:600; cursor:pointer; margin-top:1rem; }
+  button.secondary { background:#fff; color:var(--accent); border:1px solid var(--accent); margin-left:.5rem; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; margin-top:.75rem; }
+  th, td { text-align:right; padding:.4rem .5rem; border-bottom:1px solid var(--line); white-space:nowrap; }
+  th:first-child, td:first-child { text-align:left; }
+  tfoot td { font-weight:700; }
+  .tablewrap { overflow-x:auto; }
+  .totals { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:.75rem; margin-top:.5rem; }
+  .tile { border:1px solid var(--line); border-radius:6px; padding:.6rem .8rem; }
+  .tile .k { color:var(--muted); font-size:.8rem; }
+  .tile .v { font-size:1.15rem; font-weight:700; }
+  .err { color:#a33; margin-top:.5rem; }
+  .note { font-size:.85rem; color:var(--muted); border-top:1px solid var(--line); padding-top:.75rem; margin-top:1rem; }
+  #explain p { margin:.4rem 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Patronage allocation calculator</h1>
+  <p class="sub">Turn a year-end surplus into a per-member allocation table in about a minute. Nothing you enter leaves your browser.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="surplus">Net surplus (savings) for the year <span class="hint">? the amount available to allocate</span></label>
+        <input type="number" id="surplus" value="100000" step="0.01">
+      </div>
+      <div>
+        <label for="pct">% of surplus allocated to members <span class="hint">? the rest stays as unallocated/retained</span></label>
+        <input type="number" id="pct" value="60" min="0" max="100" step="0.1">
+      </div>
+      <div>
+        <label for="qual">% of member allocation that is "qualified" <span class="hint">? the rest is non-qualified</span></label>
+        <input type="number" id="qual" value="100" min="0" max="100" step="0.1">
+      </div>
+      <div>
+        <label for="cash">Cash portion of qualified allocations (%) <span class="hint">? the rest is retained as member equity</span></label>
+        <input type="number" id="cash" value="20" min="0" max="100" step="0.1">
+      </div>
+      <div>
+        <label for="basis">Patronage basis</label>
+        <select id="basis">
+          <option value="purchases">Purchases (consumer co-op)</option>
+          <option value="hours">Hours or labor (worker co-op)</option>
+          <option value="other">Other (any positive number)</option>
+        </select>
+      </div>
+      <div>
+        <label for="round">Rounding</label>
+        <select id="round">
+          <option value="2">Cents</option>
+          <option value="0">Whole dollars</option>
+        </select>
+      </div>
+    </div>
+
+    <label for="members">Member list <span class="hint">? paste CSV: name, patronage amount (one member per line; header row optional)</span></label>
+    <textarea id="members">name,purchases
+A. Rivera,4200
+B. Chen,1850.50
+C. Okafor,9300
+D. Patel,600</textarea>
+
+    <button id="run">Calculate</button>
+    <button id="dl" class="secondary" disabled>Download CSV</button>
+    <button id="sample" class="secondary">Load sample</button>
+    <div id="err" class="err"></div>
+  </div>
+
+  <div class="card" id="results" hidden>
+    <h2 style="margin:0 0 .5rem;font-size:1.2rem;">Results</h2>
+    <div class="totals" id="tiles"></div>
+    <div class="tablewrap"><table id="tbl"></table></div>
+    <div id="explain" class="note"></div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin:0 0 .5rem;font-size:1.1rem;">How this works</h2>
+    <p>Each member's share of the member allocation equals their patronage divided by total patronage. Qualified allocations are typically paid partly in cash and partly retained as equity in the member's name; non-qualified allocations are retained in full and handled differently on paper. Federal rules (Subchapter T) generally require at least 20% of a qualified written notice of allocation to be paid in cash ? this tool warns if you go below that, but it doesn't decide for you.</p>
+    <p><strong>This is a calculator, not tax or legal advice.</strong> Your bylaws, state statute, and the co-op's CPA govern what's actually allowed and what gets reported. Use these numbers as a starting point for that conversation.</p>
+    <p class="note">Built by <a href="https://saro-saravanan.github.io/spinitia/">Spinitia</a>. Questions or a broken edge case? <a href="mailto:saro.saravanan@gmail.com">saro.saravanan@gmail.com</a>.</p>
+  </div>
+</main>
+
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+  let lastRows = null, lastHeader = null;
+
+  function parseCSV(text) {
+    const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    const rows = [];
+    for (let i = 0; i < lines.length; i++) {
+      const cells = splitLine(lines[i]);
+      if (cells.length < 2) throw new Error(`Line ${i + 1}: need at least "name, amount".`);
+      const amt = parseFloat(String(cells[1]).replace(/[$,\s]/g, ''));
+      if (i === 0 && isNaN(amt)) continue; // header row
+      if (isNaN(amt)) throw new Error(`Line ${i + 1}: "${cells[1]}" is not a number.`);
+      if (amt < 0) throw new Error(`Line ${i + 1}: negative patronage for ${cells[0]}.`);
+      rows.push({ name: cells[0], patronage: amt });
+    }
+    if (!rows.length) throw new Error('No member rows found.');
+    const seen = new Set();
+    rows.forEach(r => { if (seen.has(r.name.toLowerCase())) r.dup = true; seen.add(r.name.toLowerCase()); });
+    return rows;
+  }
+  function splitLine(line) {
+    const out = []; let cur = '', q = false;
+    for (const ch of line) {
+      if (ch === '"') { q = !q; continue; }
+      if (ch === ',' && !q) { out.push(cur.trim()); cur = ''; continue; }
+      cur += ch;
+    }
+    out.push(cur.trim());
+    return out;
+  }
+  const money = (n, d) => n.toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
+  const num = id => { const v = parseFloat($(id).value); return isNaN(v) ? 0 : v; };
+
+  function calc() {
+    $('err').textContent = '';
+    let rows;
+    try { rows = parseCSV($('members').value); } catch (e) { $('err').textContent = e.message; return; }
+    const surplus = num('surplus'), pct = num('pct') / 100, qual = num('qual') / 100, cash = num('cash') / 100;
+    const d = parseInt($('round').value, 10);
+    const totalPat = rows.reduce((s, r) => s + r.patronage, 0);
+    if (totalPat <= 0) { $('err').textContent = 'Total patronage must be greater than zero.'; return; }
+    const pool = surplus * pct;
+    const retainedUnallocated = surplus - pool;
+    const f = 10 ** d;
+    const R = x => Math.round(x * f) / f;
+
+    let sumAlloc = 0;
+    rows.forEach(r => {
+      r.share = r.patronage / totalPat;
+      r.alloc = R(pool * r.share);
+      sumAlloc += r.alloc;
+    });
+    // push rounding remainder onto the largest allocation so the table foots
+    const remainder = R(pool - sumAlloc);
+    if (remainder !== 0 && rows.length) {
+      const big = rows.reduce((a, b) => (b.alloc > a.alloc ? b : a));
+      big.alloc = R(big.alloc + remainder);
+    }
+    rows.forEach(r => {
+      r.qualified = R(r.alloc * qual);
+      r.nonqual = R(r.alloc - r.qualified);
+      r.cash = R(r.qualified * cash);
+      r.retainedQ = R(r.qualified - r.cash);
+      r.equity = R(r.retainedQ + r.nonqual);
+    });
+    const tot = k => rows.reduce((s, r) => s + r[k], 0);
+
+    const tiles = [
+      ['Net surplus', money(surplus, d)],
+      ['Allocated to members', money(tot('alloc'), d)],
+      ['Unallocated / retained by co-op', money(retainedUnallocated, d)],
+      ['Cash paid to members', money(tot('cash'), d)],
+      ['Added to member equity', money(tot('equity'), d)],
+      ['Members', rows.length.toLocaleString()],
+    ];
+    $('tiles').innerHTML = tiles.map(([k, v]) => `<div class="tile"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+
+    lastHeader = ['name', 'patronage', 'share_pct', 'allocation', 'qualified', 'non_qualified', 'cash', 'retained_qualified', 'total_to_equity'];
+    lastRows = rows.map(r => [r.name, r.patronage, (r.share * 100).toFixed(4), r.alloc, r.qualified, r.nonqual, r.cash, r.retainedQ, r.equity]);
+
+    const th = ['Member', 'Patronage', 'Share', 'Allocation', 'Qualified', 'Non-qualified', 'Cash', 'Retained (qual.)', 'To equity'];
+    let html = '<thead><tr>' + th.map(h => `<th>${h}</th>`).join('') + '</tr></thead><tbody>';
+    rows.forEach(r => {
+      html += `<tr><td>${esc(r.name)}${r.dup ? ' <span class="hint">(duplicate name)</span>' : ''}</td><td>${money(r.patronage, 2)}</td><td>${(r.share * 100).toFixed(2)}%</td><td>${money(r.alloc, d)}</td><td>${money(r.qualified, d)}</td><td>${money(r.nonqual, d)}</td><td>${money(r.cash, d)}</td><td>${money(r.retainedQ, d)}</td><td>${money(r.equity, d)}</td></tr>`;
+    });
+    html += `</tbody><tfoot><tr><td>Total</td><td>${money(totalPat, 2)}</td><td>100%</td><td>${money(tot('alloc'), d)}</td><td>${money(tot('qualified'), d)}</td><td>${money(tot('nonqual'), d)}</td><td>${money(tot('cash'), d)}</td><td>${money(tot('retainedQ'), d)}</td><td>${money(tot('equity'), d)}</td></tr></tfoot>`;
+    $('tbl').innerHTML = html;
+
+    const basis = $('basis').value === 'hours' ? 'hours worked' : $('basis').value === 'purchases' ? 'purchases' : 'patronage';
+    let ex = `<p>Of the ${money(surplus, d)} surplus, ${(pct * 100).toFixed(1)}% (${money(pool, d)}) is allocated to ${rows.length} members in proportion to their ${basis}. The remaining ${money(retainedUnallocated, d)} stays with the co-op as unallocated retained savings.</p>`;
+    ex += `<p>${(qual * 100).toFixed(1)}% of each member's allocation is treated as qualified; ${(cash * 100).toFixed(1)}% of that is paid in cash (${money(tot('cash'), d)} total) and the rest is retained as equity in the member's name. Non-qualified allocations (${money(tot('nonqual'), d)}) are retained in full.</p>`;
+    if (qual > 0 && cash < 0.2) ex += `<p><strong>Heads up:</strong> the cash portion is below 20%. Qualified written notices of allocation generally need at least 20% paid in cash to be treated as qualified ? check with the co-op's CPA.</p>`;
+    if (rows.some(r => r.dup)) ex += `<p><strong>Heads up:</strong> duplicate member names found. They were treated as separate members; merge them in your register if they're the same person.</p>`;
+    ex += `<p>Not tax or legal advice. Confirm treatment with a professional before issuing notices or statements.</p>`;
+    $('explain').innerHTML = ex;
+
+    $('results').hidden = false;
+    $('dl').disabled = false;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+  function download() {
+    if (!lastRows) return;
+    const q = v => /[",\n]/.test(String(v)) ? '"' + String(v).replace(/"/g, '""') + '"' : v;
+    const csv = [lastHeader.join(',')].concat(lastRows.map(r => r.map(q).join(','))).join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    a.download = 'patronage-allocation.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+  $('run').addEventListener('click', calc);
+  $('dl').addEventListener('click', download);
+  $('sample').addEventListener('click', () => {
+    $('members').value = 'name,purchases\nA. Rivera,4200\nB. Chen,1850.50\nC. Okafor,9300\nD. Patel,600\nE. Nguyen,3100\nF. Haddad,275';
+    calc();
+  });
+  calc();
+})();
+</script>
+</body>
+</html>
